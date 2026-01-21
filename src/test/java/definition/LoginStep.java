@@ -19,8 +19,8 @@ public class LoginStep extends BaseClass {
     }
     @Given("verify application login page")
     public void verify_application_login_page() {
+        l=new Loginpage();
         Assert.assertEquals(getTitle(),"nopCommerce demo store. Login");
-         l=new Loginpage();
         Assert.assertTrue(l.getTxtLoginPage().getText().contains("Welcome"));
     }
     @When("the user has to give {string} and {string}")
