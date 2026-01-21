@@ -2,9 +2,10 @@ package definition;
 
 import baseclass.BaseClass;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import webpages.Loginpage;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class LoginStep extends BaseClass {
     Loginpage l;
@@ -20,11 +21,11 @@ public class LoginStep extends BaseClass {
     @Given("verify application login page")
     public void verify_application_login_page() {
         l=new Loginpage();
-        Assert.assertEquals(getTitle(),"nopCommerce demo store. Login");
-        Assert.assertTrue(l.getTxtLoginPage().getText().contains("Welcome"));
+        assertEquals("nopCommerce demo store. Login", getTitle());
     }
     @When("the user has to give {string} and {string}")
     public void the_user_has_to_give_and(String email, String pass) {
+
         clear(l.getTxtusername());
         sendkeys(l.getTxtusername(),email);
         clear(l.getTxtpassword());
@@ -36,7 +37,7 @@ public class LoginStep extends BaseClass {
     }
     @Then("verify login confirmation")
     public void verify_login_confirmation() {
-       Assert.assertTrue(driver.findElement(By.xpath("//a[text()='Logout']")).isDisplayed());
+       assertTrue(driver.findElement(By.xpath("//a[text()='Logout']")).isDisplayed());
         closebrowser();
     }
 

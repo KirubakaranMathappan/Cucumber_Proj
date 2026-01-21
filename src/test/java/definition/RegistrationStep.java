@@ -2,7 +2,6 @@ package definition;
 
 import baseclass.BaseClass;
 import io.cucumber.java.en.*;
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.junit.Assert;
 import webpages.Registerpage;
 
@@ -22,8 +21,8 @@ public class RegistrationStep extends BaseClass {
     }
     @When("verify the register page with proper validation")
     public void verify_the_register_page_with_proper_validation() {
+        Assert.assertEquals("nopCommerce demo store. Register",getTitle());
         Assert.assertTrue(r.getYourpersonaldetails().isDisplayed());
-        Assert.assertEquals(getTitle(),"nopCommerce demo store. Register");
     }
     @When("the user has to provide valid details for registration")
     public void the_user_has_to_provide_valid_details_for_registration() {
