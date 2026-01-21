@@ -38,7 +38,7 @@ public class LoginStep extends BaseClass {
     @Then("verify login confirmation")
     public void verify_login_confirmation() {
        assertTrue(driver.findElement(By.xpath("//a[text()='Logout']")).isDisplayed());
-        closebrowser();
+        quitbrowser();
     }
 
 }

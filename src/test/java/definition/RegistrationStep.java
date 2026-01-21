@@ -42,6 +42,6 @@ public class RegistrationStep extends BaseClass {
     @Then("verify the registration successful message")
     public void verify_the_registration_successful_message() {
         Assert.assertTrue(r.getRegsiterconfirmation().getText().contains("Your registration completed"));
-        closebrowser();
+        quitbrowser();
     }
 }
