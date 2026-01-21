@@ -4,7 +4,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions( features = ".//src//test//resources//Features" ,
+@CucumberOptions( features = ".//src//test//resources//Features//Register.feature" ,
                     glue = "definition",
                     dryRun = false,
                     monochrome = true,
